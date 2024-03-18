@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import fetchContent from './hashGenerator';
 import Cards from './Cards';
 
+import { createContext } from "react";
+import { Outlet } from 'react-router-dom';
+
+function DisplayComic(){
+    
+}
 
 function ComicExplorer(){
     const [state, setState] = useState('loading') // success; error; loading
@@ -9,6 +15,8 @@ function ComicExplorer(){
     const [comicList, setComicList] = useState(null) 
     const [searchValue, setSearchValue] = useState("") // input
     const [searchTerm, setSearchTerm] = useState("wolverine")
+
+    const ComicContext = createContext('null') 
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -38,7 +46,7 @@ function ComicExplorer(){
     }
 
     return (
-        <>
+        <ComicContext.Provider value={ComicContext}>
             <input type="text" value={searchValue} onChange={handleInputChange}/>
             <button onClick={handleSearchClick}>Search</button>
             {(state === 'loading') ? (
@@ -49,7 +57,9 @@ function ComicExplorer(){
                 <Cards results={comicList.data.results}/>
             )
             }
-        </>
+
+            <Outlet />
+        </ComicContext.Provider>
     )
 }
 

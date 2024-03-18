@@ -1,4 +1,5 @@
 import md5 from "js-md5";
+import { createContext } from "react";
 
 function createHash() {
     const p1K = '5ef35881e84c5178adbdfcd5d2b94e5a';
@@ -8,6 +9,7 @@ function createHash() {
 
     return { ts, p1K, hash };
 }
+
 
 async function fetchContent(titleInput = "wolverine"){
   const{ts, p1K, hash} = createHash()
@@ -23,5 +25,6 @@ async function fetchContent(titleInput = "wolverine"){
 
   return data
 }
+
 
 export default fetchContent
