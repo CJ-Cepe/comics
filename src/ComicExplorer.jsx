@@ -17,20 +17,21 @@ function ComicExplorer(){
     if (!comicList) {
         return <div>Loading...</div>;
     } else {
-        console.log(comicList)
         const results = comicList.data.results
+
         const cards = results.map((result, index) => {
-            
-            return <Card key={index} title={result.title} thumbNailSrc={result.thumbnail.path} extension={result.thumbnail.extension}/>
-        
+        return (
+            <Card key={index} title={result.title} 
+                thumbNailSrc={result.thumbnail.path} 
+                extension={result.thumbnail.extension}/>
+            )
         }) 
 
         return (
-            <>
+            <div className='grid gap-5 cards justify-items-center'>
                 {cards}
-            </>
+            </div>
         )
-        
     }
 }
 

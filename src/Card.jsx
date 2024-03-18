@@ -1,11 +1,11 @@
 function Card({title, thumbNailSrc, extension}){
-    const aspectRatio = "/" + "portrait_xlarge"
-    console.log(title)
-    console.log(`${thumbNailSrc}${aspectRatio}"."${extension}`)
+
+    const aspectRatio = "/" + "portrait_uncanny"
+
     return (
-        <div>
-            <p>{title}</p>
-            <img src={`${thumbNailSrc}${aspectRatio}.${extension}`} alt={title} />
+        <div className="">
+            <img src={`${thumbNailSrc}${aspectRatio}.${extension}`} alt={title} width={200} className=""/>
+            <p className="text-sm">{title}</p>
         </div>
     )
 }
