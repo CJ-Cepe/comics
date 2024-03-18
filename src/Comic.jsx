@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useLocation } from "react-router-dom"
 
-
-function Comic (){
-    /* const data = useContext(ComicContext)
-    console.log(data) */
+function Comic ({}){
+    const location = useLocation()
+    const data = location.state;
+    console.log(data)
+    
     return (
         <>
             <div>yeah!</div>

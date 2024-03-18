@@ -11,10 +11,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <ComicExplorer />,
-    children: [
-      {path: "/:name", element: <Comic />}
-    ],
   },
+  {
+    path: "/:name", 
+    element: <Comic />
+  }
 ]);
 
 
