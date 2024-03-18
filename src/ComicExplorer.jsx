@@ -4,15 +4,27 @@ import Cards from './Cards';
 
 
 function ComicExplorer(){
-    const [comicList, setComicList] = useState(null)
-    const [searchValue, setSearchValue] = useState("")
+    const [state, setState] = useState('loading') // success; error; loading
+
+    const [comicList, setComicList] = useState(null) 
+    const [searchValue, setSearchValue] = useState("") // input
     const [searchTerm, setSearchTerm] = useState("wolverine")
 
     useEffect(()=>{
         const fetchData = async () => {
-            const result = await fetchContent(searchTerm);
-            setComicList(result);
+            setState("loading")
+            try {
+                const result = await fetchContent(searchTerm);
+                if(result.data.count == 0){
+                    throw new Error("Result count is 0")
+                }
+                setState("success")
+                setComicList(result);
+            } catch (error) {
+                setState("error")
+            } 
         }
+       
         fetchData();
     }, [searchTerm])
 
@@ -29,13 +41,13 @@ function ComicExplorer(){
         <>
             <input type="text" value={searchValue} onChange={handleInputChange}/>
             <button onClick={handleSearchClick}>Search</button>
-            {!comicList ? (
-                <div>
-                    Loading...
-                </div>
-                ) : (
+            {(state === 'loading') ? (
+                <div> Loading... </div>
+            ) : (state === 'error') ? (
+                <div> No comics found</div>
+            ) : (
                 <Cards results={comicList.data.results}/>
-                )
+            )
             }
         </>
     )
