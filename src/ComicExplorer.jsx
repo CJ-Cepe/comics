@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fetchContent from './hashGenerator';
-import Card from './Card';
+import Cards from './Cards';
 
 
 function ComicExplorer(){
@@ -14,25 +14,19 @@ function ComicExplorer(){
         fetchData();
     }, [])
 
-    if (!comicList) {
-        return <div>Loading...</div>;
-    } else {
-        const results = comicList.data.results
-
-        const cards = results.map((result, index) => {
-        return (
-            <Card key={index} title={result.title} 
-                thumbNailSrc={result.thumbnail.path} 
-                extension={result.thumbnail.extension}/>
-            )
-        }) 
-
-        return (
-            <div className='grid gap-5 cards justify-items-center'>
-                {cards}
-            </div>
-        )
-    }
+    return (
+        <>
+            <input type="text" />
+            {!comicList ? (
+                <div>
+                    Loading...
+                </div>
+                ) : (
+                <Cards results={comicList.data.results}/>
+                )
+            }
+        </>
+    )
 }
 
 export default ComicExplorer
