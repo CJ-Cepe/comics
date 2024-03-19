@@ -8,6 +8,7 @@ function ComicExplorer(){
     const [comicList, setComicList] = useState(null) 
     const [searchValue, setSearchValue] = useState("") // input
     const [searchTerm, setSearchTerm] = useState("wolverine")
+    const [searchEntity, setSearchEntity] = useState('title')
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -31,21 +32,55 @@ function ComicExplorer(){
         setSearchValue(event.target.value)
     }
 
-    const handleSearchClick = () => {
+    const handleSearchClick = (event) => {
         console.log('blade')
+        event.preventDefault()
         setSearchTerm(searchValue)
     }
 
+    const handleCheckboxChange = (event) => {
+        setSearchEntity(event.target.value);
+    };
+
     return (
-        <>
-            <input type="text" value={searchValue} onChange={handleInputChange}/>
-            <button onClick={handleSearchClick}>Search</button>
+        <>  
+            <form>
+                <input type="text" value={searchValue} onChange={handleInputChange}/>
+                <div>
+                    <label htmlFor="">
+                        <input type="radio" name="entity" value="title" checked={searchEntity==="title"} onChange={handleCheckboxChange}/>
+                        Comic Title
+                    </label>
+                    <label htmlFor="" >
+                        <input type="radio" name="entity" value="character" checked={searchEntity==="character"} onChange={handleCheckboxChange}/>
+                        Character
+                    </label>
+                    <label htmlFor="">
+                        <input type="radio" name="entity" value="creator" checked={searchEntity==="creator"} onChange={handleCheckboxChange}/>
+                        Creator
+                    </label>
+                    <label htmlFor="">
+                        <input type="radio" name="entity" value="event" checked={searchEntity==="event"} onChange={handleCheckboxChange}/>
+                        Event
+                    </label>
+                    <label htmlFor="">
+                        <input type="radio" name="entity" value="series" checked={searchEntity==="series"} onChange={handleCheckboxChange}/>
+                        Series
+                    </label>
+                    <label htmlFor="">
+                        <input type="radio" name="entity" value="story" checked={searchEntity==="story"} onChange={handleCheckboxChange}/>
+                        Story
+                    </label>
+                </div>
+                <button onClick={handleSearchClick}>Search</button>
+            </form>
+            
             {(state === 'loading') ? (
                 <div> Loading... </div>
             ) : (state === 'error') ? (
                 <div> No comics found</div>
             ) : (
-                <Cards results={comicList.data.results}/>
+                <Cards results={comicList.data.results}/> 
             )
             }
         </>
