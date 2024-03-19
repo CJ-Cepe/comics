@@ -14,7 +14,7 @@ function ComicExplorer(){
         const fetchData = async () => {
             setState("loading")
             try {
-                const result = await fetchContent(searchTerm);
+                const result = await fetchContent(searchTerm, searchEntity);
                 if(result.data.count == 0){
                     throw new Error("Result count is 0")
                 }
@@ -22,7 +22,7 @@ function ComicExplorer(){
                 setComicList(result);
             } catch (error) {
                 setState("error")
-            } 
+            }
         }
        
         fetchData();
