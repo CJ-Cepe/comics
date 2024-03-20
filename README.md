@@ -20,3 +20,15 @@ To Do
     - [] what if you visited the page path directly without cliking the image
  - [] Search comic based on choosen entity
    - checkbox
+ - [] Create a lookup JSON for searched entity
+    - create a dedicated js file for extracting, to create a json file used for id lookup
+      - create hash
+      - list entities
+      - per entity in entities
+          - generate url
+          - fetch all
+          - response to json
+          - extract data
+          - export to json
+- [] CORS issue
+  - set up own server
