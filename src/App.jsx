@@ -10,6 +10,8 @@ function Aside(){
 
   return (
     <aside>
+      <p>With great power comes great responsibility</p>
+      <p>Marvel Comics Catalogue</p>
       <p>{`${monthNames[month]} ${year}`}</p>
     </aside>
   )
@@ -39,8 +41,8 @@ function Body(){
 
 function App() {
   return (  
-    <> 
-      <div>
+    <>
+      <div className="m-wrapper">
         <Nav />
         <Aside />
         <Body />

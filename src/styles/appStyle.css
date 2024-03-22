@@ -39,3 +39,54 @@ p, h1, h2, h3, h4, h5, h6 {
 .cards {
     grid-template-columns: repeat(auto-fit, minmax(clamp(100px, 30vw, 200px), 1fr));
 }
+
+/* -------------------------------*/
+/* ------------- App -------------*/
+/* -------------------------------*/
+
+#root {
+  display: flex;
+  justify-content: center;
+
+  & > .m-wrapper {
+    width: 1280px;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    grid-template-rows: 32px 64px 1fr;
+  }
+}
+
+/* ------------- Nav -------------*/
+nav {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: aqua;
+}
+
+/* ------------- Aside -------------*/
+aside {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+
+  text-transform: capitalize;
+  border: 2px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  & > p {
+    writing-mode:  vertical-lr;
+    transform: rotate(180deg);
+  }
+}
+
+/* ------------- Body -------------*/
+main {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  background-color: rgb(20, 55, 184);
+}
