@@ -39,7 +39,7 @@ function SelectSort(){
                 <option value="issueNumber">Issue #</option>
                 <option value="title">Title</option>
             </select>
-        |
+            &nbsp; | &nbsp;
             <select onChange={handleArrangeValue} value={arrangeValue}>
                 <option value="descending">Descending</option>
                 <option value="ascending">Ascending</option>
