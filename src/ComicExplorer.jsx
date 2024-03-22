@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fetchContent from './hashGenerator';
+import fetchContent from './scripts/hashGenerator';
 import Cards from './Cards';
 
 function ComicExplorer(){

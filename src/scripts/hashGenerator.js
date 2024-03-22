@@ -55,8 +55,8 @@ function assembleUrl(data){
   /* const apiUrl = `http://gateway.marvel.com/v1/public/comics?limit=20&format=comic&formatType=comic&title=${titleInput}&orderBy=-focDate%2C-onsaleDate&ts=${ts}&apikey=${p1K}&hash=${hash}`; */
 }
 
-import chJson from "./jsons/characters.json"
-import evJson from "./jsons/events.json"
+import chJson from "../jsons/characters.json"
+import evJson from "../jsons/events.json"
 
 function getId(entity, term){
 
