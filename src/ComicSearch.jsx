@@ -34,9 +34,7 @@ function ComicSearch(){
     }, [searchTerm])
 
 
-    
-
-    return (
+        return (
         <div className='comicSearch overlay'>  
             <Search checkBoxHandler={handleCheckboxChange} searchTermHandler={setSearchTerm} entityProp={searchEntity} />
             
