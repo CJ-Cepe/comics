@@ -1,4 +1,6 @@
 import { useState } from "react"
+import './styles/searchStyle.css'
+import searchIcon from './assets/search.svg'
 
 function Search({checkBoxHandler, searchTermHandler, entityProp}){
 
@@ -34,13 +36,13 @@ function SelectSort(){
             Sort:
             <select onChange={handleOrderByValueChange} value={orderValue}>
                 <option value="date">Date</option>
-                <option value="issueNumber">Issue Number</option>
+                <option value="issueNumber">Issue #</option>
                 <option value="title">Title</option>
             </select>
         |
             <select onChange={handleArrangeValue} value={arrangeValue}>
-                <option value="descending">descending</option>
-                <option value="ascending">ascending</option>
+                <option value="descending">Descending</option>
+                <option value="ascending">Ascending</option>
             </select>
         </label>
     )
@@ -56,7 +58,7 @@ function YearInput({}) {
     return (
         <label>
             Year:
-            <input type="number" min="1980" max="2024" value={year} onChange={handleYearChange}></input>
+            <input type="number" min="1980" max="2024" placeholder="Any" value={year} onChange={handleYearChange}></input>
         </label>
     )
 }
@@ -71,7 +73,7 @@ function CheckBox(){
 
     return(
         <label>
-            No Variant:
+            No Variant:&nbsp;
             <input type="checkbox" checked={isChecked} onChange={handleIsCheckedChange}/>
         </label>
     )
@@ -119,8 +121,17 @@ function Input({checkBoxHandler, searchTermHandler, entityProp}){
     return (
         <div>
             <SearchBy />
-            <input type="text" value={searchValue} onChange={handleInputChange}/>
-            
+            <div>
+                <input type="text" value={searchValue} onChange={handleInputChange}/>
+                <button onClick={handleSearchClick}><img src={searchIcon} alt="search" /></button>
+            </div>
+        </div>
+    )
+}
+
+function dummy(){
+    return (
+        <>
             <div>
                 <label htmlFor="">
                     <input type="radio" name="entity" value="comics" checked={searchEntity==="comics"} onChange={handleCheckboxChange}/>
@@ -135,7 +146,6 @@ function Input({checkBoxHandler, searchTermHandler, entityProp}){
                     Event
                 </label>
             </div>
-            <button onClick={handleSearchClick}>Search</button>
-        </div>
+        </>
     )
 }
