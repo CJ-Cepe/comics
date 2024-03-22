@@ -20,7 +20,7 @@ function Aside(){
 function Nav(){
   return (
     <nav>
-      <div>Marvel Comics</div>
+      <div><div>Marvel <span>Comics</span> <div>Catalogue</div></div><img src="" alt="website" /></div>
       <ul>
         <li><a href=""></a>Comics</li>
         <li><a href=""></a>Characters</li>

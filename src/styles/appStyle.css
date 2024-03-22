@@ -8,6 +8,7 @@
 
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -33,7 +34,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 * {
-    outline: 1px solid red;
+    /*   */
 }
 
 .cards {
@@ -47,10 +48,12 @@ p, h1, h2, h3, h4, h5, h6 {
 #root {
   display: flex;
   justify-content: center;
+  
 
   & > .m-wrapper {
     width: 1280px;
     height: 100vh;
+    border: 1px solid black;
 
     display: grid;
     grid-template-columns: 32px 1fr;
@@ -62,7 +65,59 @@ p, h1, h2, h3, h4, h5, h6 {
 nav {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  background-color: aqua;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  display: flex;
+  gap: 25px;
+  padding: 0 3%;
+  justify-content: space-between;
+  align-items: center;
+
+  /* --- Logo --- */
+  & > div:first-child{
+    height: 200%;
+    width: 10%;
+    padding: 5px 0 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: red;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+
+    /* --- Marvel--- */
+    & > div {
+      text-align: center;
+      
+      /* --- Comics --- */
+      & > span:first-child {
+
+      }
+
+      /* --- Catalogue --- */
+      & > div:last-child {
+        text-align: center;
+      }
+    }
+  }
+
+  & > ul {
+    list-style-type: none;
+    width: 20%;
+
+    display: flex;
+    margin-right: auto;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  & > div:last-child{
+
+  }
 }
 
 /* ------------- Aside -------------*/
@@ -71,16 +126,20 @@ aside {
   grid-row: 1 / 4;
 
   text-transform: capitalize;
-  border: 2px solid black;
+  border-right: 1px solid;
 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  overflow: hidden;
   
   & > p {
     writing-mode:  vertical-lr;
     transform: rotate(180deg);
+
+    
   }
 }
 
@@ -88,5 +147,9 @@ aside {
 main {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
-  background-color: rgb(20, 55, 184);
+
+  
+  background: url("../assets/wallpaper.png");
+  background-size: cover;
+  
 }
