@@ -1,4 +1,24 @@
-function Search(){
+import { useState } from "react"
+
+function Search({checkBoxHandler, searchTermHandler, entityProp}){
+
+    //renaming prop
+    const handleCheckboxChange = checkBoxHandler
+    const setSearchTerm = searchTermHandler
+    const searchEntity = entityProp
+
+    const [searchValue, setSearchValue] = useState("")
+
+    const handleSearchClick = (event) => {
+        console.log('blade')
+        event.preventDefault()
+        setSearchTerm(searchValue)
+    }
+
+    const handleInputChange = (event) => {
+        setSearchValue(event.target.value)
+    }
+
     return (
         <form>
             <input type="text" value={searchValue} onChange={handleInputChange}/>

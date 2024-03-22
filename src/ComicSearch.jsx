@@ -8,9 +8,12 @@ function ComicSearch(){
     const [state, setState] = useState('loading') // success; error; loading
 
     const [comicList, setComicList] = useState(null) 
-    const [searchValue, setSearchValue] = useState("") // input
     const [searchTerm, setSearchTerm] = useState("wolverine")
     const [searchEntity, setSearchEntity] = useState('comics')
+
+    const handleCheckboxChange = (event) => {
+        setSearchEntity(event.target.value);
+    };
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -30,23 +33,12 @@ function ComicSearch(){
         fetchData();
     }, [searchTerm])
 
-    const handleInputChange = (event) => {
-        setSearchValue(event.target.value)
-    }
 
-    const handleSearchClick = (event) => {
-        console.log('blade')
-        event.preventDefault()
-        setSearchTerm(searchValue)
-    }
-
-    const handleCheckboxChange = (event) => {
-        setSearchEntity(event.target.value);
-    };
+    
 
     return (
         <div className='comicSearch overlay'>  
-            <Search/>
+            <Search checkBoxHandler={handleCheckboxChange} searchTermHandler={setSearchTerm} entityProp={searchEntity} />
             
             {(state === 'loading') ? (
                 <div> Loading... </div>
