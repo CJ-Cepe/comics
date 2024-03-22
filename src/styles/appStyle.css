@@ -37,10 +37,6 @@ p, h1, h2, h3, h4, h5, h6 {
     /*   */
 }
 
-.cards {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(100px, 30vw, 200px), 1fr));
-}
-
 /* -------------------------------*/
 /* ------------- App -------------*/
 /* -------------------------------*/
@@ -148,8 +144,8 @@ main {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 
-  
   background: url("../assets/wallpaper.png");
   background-size: cover;
-  
+
+  overflow-y: scroll;
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import ComicExplorer from './ComicExplorer.jsx'
 import Comic from './Comic.jsx'
 import App from './App.jsx'
 

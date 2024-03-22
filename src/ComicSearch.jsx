@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import fetchContent from './scripts/hashGenerator';
+import Search from './Search';
 import Cards from './Cards';
+import './styles/comicSearchStyle.css'
 
-function ComicExplorer(){
+function ComicSearch(){
     const [state, setState] = useState('loading') // success; error; loading
 
     const [comicList, setComicList] = useState(null) 
@@ -43,25 +45,8 @@ function ComicExplorer(){
     };
 
     return (
-        <>  
-            <form>
-                <input type="text" value={searchValue} onChange={handleInputChange}/>
-                <div>
-                    <label htmlFor="">
-                        <input type="radio" name="entity" value="comics" checked={searchEntity==="comics"} onChange={handleCheckboxChange}/>
-                        Comic Title
-                    </label>
-                    <label htmlFor="" >
-                        <input type="radio" name="entity" value="characters" checked={searchEntity==="characters"} onChange={handleCheckboxChange}/>
-                        Character
-                    </label>
-                    <label htmlFor="">
-                        <input type="radio" name="entity" value="events" checked={searchEntity==="events"} onChange={handleCheckboxChange}/>
-                        Event
-                    </label>
-                </div>
-                <button onClick={handleSearchClick}>Search</button>
-            </form>
+        <div className='comicSearch overlay'>  
+            <Search/>
             
             {(state === 'loading') ? (
                 <div> Loading... </div>
@@ -71,8 +56,8 @@ function ComicExplorer(){
                 <Cards results={comicList.data.results}/> 
             )
             }
-        </>
+        </div>
     )
 }
 
-export default ComicExplorer
+export default ComicSearch

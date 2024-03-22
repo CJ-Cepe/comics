@@ -1,5 +1,6 @@
 import "./styles/appStyle.css"
 import Home from "./Home"
+import ComicSearch from "./ComicSearch"
 
 function Aside(){
   const date = new Date()
@@ -34,7 +35,7 @@ function Nav(){
 function Body(){
   return (
     <main>
-      <Home />
+      <ComicSearch />
     </main>
   )
 }
