@@ -2,15 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import ComicExplorer from './ComicExplorer.jsx'
 import Comic from './Comic.jsx'
-
-import './index.css'
+import Home from './Home.jsx'
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ComicExplorer />,
+    element: <Home />,
   },
   {
     path: "/:name", 

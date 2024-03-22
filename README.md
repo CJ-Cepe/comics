@@ -32,3 +32,5 @@ To Do
           - export to json
 - [] CORS issue
   - set up own server
+- [] design home
+  - use figma for layout and design

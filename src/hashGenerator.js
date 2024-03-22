@@ -46,6 +46,7 @@ function assembleUrl(data){
   const offSet = '0'
   
   if(entity === "comics"){
+    //return `${base}${entity}?limit=${limit}&offset=${offSet}&startYear=2000&ts=${ts}&apikey=${p1K}&hash=${hash}`
     return `${base}${entity}?limit=${limit}&offset=${offSet}&title=${term}&ts=${ts}&apikey=${p1K}&hash=${hash}`
   } else {
     return `${base}${entity}/${id}/comics/?ts=${ts}&apikey=${p1K}&hash=${hash}`
@@ -91,7 +92,7 @@ async function fetchContent(term = "wolverine", entityTemp){
   }
   
   const data = await response.json()
-
+  console.log(data)
   return data
 }
 
