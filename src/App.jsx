@@ -10,10 +10,13 @@ function Aside(){
   "July", "August", "September", "October", "November", "December"];
 
   return (
-    <aside>
-      <p>With great power comes great responsibility</p>
-      <p>Marvel Comics Catalogue</p>
-      <p>{`${monthNames[month]} ${year}`}</p>
+    <aside className="bg-orange-300 w-full h-full">
+      <section><p>{`${monthNames[month]}`}<span>{`${year}`}</span></p></section>
+      <section>
+        <span>Data provided by Marvel.</span>
+        <img src="" alt="" />
+        <span>© 2024 MARVEL</span></section>
+      <section></section>
     </aside>
   )
 }
@@ -21,21 +24,29 @@ function Aside(){
 function Nav(){
   return (
     <nav>
-      <div><div>Marvel <span>Comics</span> <div>Catalogue</div></div><img src="" alt="website" /></div>
-      <ul>
-        <li><a href=""></a>Comics</li>
-        <li><a href=""></a>Characters</li>
-        <li><a href=""></a>Events</li>
-      </ul>
-      <div><a href="">bookmark</a></div>
+
     </nav>
+  )
+}
+
+function Header(){
+  return (
+    <header className="bg-lime-300 w-full h-full">
+      <section>Marvel Comics Catalogue</section>
+      <section>thanos</section>
+      <section>
+          <p>Discover the Epic Sagas, Unforgettable Characters, and Thrilling Adventures Awaiting You in the Marvel Universe</p>
+      </section>
+      <section>bookmark</section>
+      <section>blackbolt</section>  
+    </header>
   )
 }
 
 function Body(){
   return (
-    <main>
-      <ComicSearch />
+    <main className="bg-amber-200 w-full h-full">
+      <p>body!!!</p>
     </main>
   )
 }
@@ -43,9 +54,9 @@ function Body(){
 function App() {
   return (  
     <>
-      <main >
-
-      </main>
+      <Header />
+      <Aside />
+      <Body />
     </>
   )
 }
