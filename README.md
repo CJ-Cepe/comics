@@ -42,3 +42,7 @@ To Do
   - set img size and repeat
   - set blend mode to lighten
   - result: lighten/soften img + repeating
+- [] structure and position each panel
+  - use css grid
+- [] make date and attrib follow scroll
+  - set to aside (cont), to sticky and top 0
