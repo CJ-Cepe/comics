@@ -2,10 +2,11 @@ import { Link } from "react-router-dom"
 import "./styles/cardsStyle.css"
 
 function Card({data}){
-    const{title, thumbnail: {path, extension}} = data
+    let {title, thumbnail: {path, extension}} = data
     const pathName = title.replace(/\s/g, '-').replace(/#/, '')
-    const aspectRatio = "/" + "portrait_uncanny";
-    
+    const aspectRatio = "/" + "landscape_amazing";
+    path = "http://i.annihil.us/u/prod/marvel/i/mg/c/a0/4ce5a9bf70e19";
+    console.log(`${path}${aspectRatio}.${extension}`)
     return (
         <div className="card">
             <div>

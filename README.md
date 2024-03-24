@@ -34,3 +34,11 @@ To Do
   - set up own server
 - [] design home
   - use figma for layout and design
+
+
+- [] set background img
+  - convert jpg to webp + compress
+  - give body background img + rgba white
+  - set img size and repeat
+  - set blend mode to lighten
+  - result: lighten/soften img + repeating

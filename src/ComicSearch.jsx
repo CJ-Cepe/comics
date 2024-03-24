@@ -33,8 +33,15 @@ function ComicSearch(){
         fetchData();
     }, [searchTerm])
 
-
-        return (
+    /*
+        sort
+        ascending
+        year
+        variant
+        search by
+        title
+    */
+    return (
         <div className='comicSearch overlay'>  
             <Search checkBoxHandler={handleCheckboxChange} searchTermHandler={setSearchTerm} entityProp={searchEntity} />
             

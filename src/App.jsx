@@ -1,6 +1,6 @@
-import "./styles/appStyle.css"
 import Home from "./Home"
 import ComicSearch from "./ComicSearch"
+import "./styles/index.css"
 
 function Aside(){
   const date = new Date()
@@ -43,11 +43,9 @@ function Body(){
 function App() {
   return (  
     <>
-      <div className="m-wrapper">
-        <Nav />
-        <Aside />
-        <Body />
-      </div>
+      <main >
+
+      </main>
     </>
   )
 }
