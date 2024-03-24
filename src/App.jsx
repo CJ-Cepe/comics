@@ -8,13 +8,17 @@ function Aside(){
   "July", "August", "September", "October", "November", "December"];
 
   return (
-    <>
-      <section className="sticky"><p>{`${monthNames[month]}`}<span>{`${year}`}</span></p></section>
-      <section  className="sticky">
+    <aside className="sticky top-0 flex flex-col gap-2.5">
+      <section className="h-24">
+        <p>{`${monthNames[month]}`}
+          <span>{`${year}`}</span>
+        </p>
+      </section>
+      <section className="h-48">
         <span>Data provided by Marvel.</span>
         <img src="" alt="" />
         <span>© 2024 MARVEL</span></section>
-    </>
+    </aside>
   )
 }
 
