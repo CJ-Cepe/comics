@@ -1,5 +1,3 @@
-import Home from "./Home"
-import ComicSearch from "./ComicSearch"
 import "./styles/index.css"
 
 function Aside(){
@@ -10,28 +8,19 @@ function Aside(){
   "July", "August", "September", "October", "November", "December"];
 
   return (
-    <aside className="bg-orange-300 w-full h-full">
-      <section><p>{`${monthNames[month]}`}<span>{`${year}`}</span></p></section>
-      <section>
+    <>
+      <section className="sticky"><p>{`${monthNames[month]}`}<span>{`${year}`}</span></p></section>
+      <section  className="sticky">
         <span>Data provided by Marvel.</span>
         <img src="" alt="" />
         <span>© 2024 MARVEL</span></section>
-      <section></section>
-    </aside>
-  )
-}
-
-function Nav(){
-  return (
-    <nav>
-
-    </nav>
+    </>
   )
 }
 
 function Header(){
   return (
-    <header className="bg-lime-300 w-full h-full">
+    <>
       <section>Marvel Comics Catalogue</section>
       <section>thanos</section>
       <section>
@@ -39,15 +28,25 @@ function Header(){
       </section>
       <section>bookmark</section>
       <section>blackbolt</section>  
-    </header>
+    </>
   )
 }
 
-function Body(){
+function Main(){
   return (
-    <main className="bg-amber-200 w-full h-full">
-      <p>body!!!</p>
-    </main>
+    <>
+      <section>new</section>
+      <section>events</section>
+      <section>feat char</section>
+      <section>feat event</section>
+      <section>agatha</section>
+      <section>search com</section>
+      <section>avengers</section>
+      <section>fantastic</section>
+      <section>search char</section>
+      <section>search eve</section>
+      <section>foot</section>
+    </>
   )
 }
 
@@ -56,7 +55,7 @@ function App() {
     <>
       <Header />
       <Aside />
-      <Body />
+      <Main />
     </>
   )
 }
